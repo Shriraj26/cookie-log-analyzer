@@ -24,7 +24,6 @@ def validate_file(file_path: str) -> str:
         raise FileNotFoundError(f"Error: File not found -> {file_path}")
     return file_path
 
-
 def validate_date(date_str: str) -> str:
     parts = date_str.split("-")
     if len(parts) != 3:
@@ -63,11 +62,6 @@ def parse_cli() -> Namespace:
     parser.add_argument("-f", "--file", required=True, help="CSV file path")
     parser.add_argument("-d", "--date", required=True, help="Date in UTC format")
     return parser.parse_args()
-
-
-# Check if the file exists or not
-# Check if the date is valid
-
 
 def compare_dates(date_str: str, timestamp_str: str) -> int:
     """
